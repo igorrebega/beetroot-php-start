@@ -1,0 +1,17 @@
+<VirtualHost *:80>
+	ServerName test.loc
+	DocumentRoot /home/irebega/www/test.loc
+    ServerAdmin admin@localhost 
+
+	<Directory /home/irebega/www/test.loc>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride All
+		Order allow,deny
+		allow from all
+    Require all granted
+
+	</Directory>
+	
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
