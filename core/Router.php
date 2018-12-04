@@ -2,7 +2,10 @@
 
 class Router
 {
-    protected $routes = [];
+    protected $routes = [
+        'GET'  => [],
+        'POST' => []
+    ];
 
     public static function load($file)
     {
@@ -13,15 +16,22 @@ class Router
         return $router;
     }
 
-    public function define($routes)
+    public function get($uri, $controller)
     {
-        $this->routes = $routes;
+        $this->routes['GET'][$uri] = $controller;
     }
 
-    public function direct($url)
+    public function post($uri, $controller)
     {
-        if (isset($this->routes[$url])) {
-            return $this->routes[$url];
+        $this->routes['POST'][$uri] = $controller;
+    }
+
+    public function direct($url, $method)
+    {
+        $url = parse_url($url, PHP_URL_PATH);
+
+        if (isset($this->routes[$method][$url])) {
+            return $this->routes[$method][$url];
         }
 
         throw new Exception('Page not found');
