@@ -1,7 +1,7 @@
 <?php
 
 $result = $app['database']->insert('users', [
-    'nasdfsdme' => $_POST['name']
+    'name' => $_POST['name']
 ]);
 
 if ($result) {
