@@ -9,7 +9,7 @@ class Connection
         $user = $config['user'];
         $pass = $config['password'];
 
-        $dsn = "mysql:host=$host;dbname=$db";
+        $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 
         try {
             $pdo = new PDO(
