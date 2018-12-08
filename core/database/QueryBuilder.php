@@ -20,7 +20,7 @@ class QueryBuilder
     {
         $stmt = $this->pdo->query("SELECT * FROM $table");
 
-        return $stmt->fetchAll(PDO::FETCH_CLASS, $className);
+        return $stmt->fetchAll(PDO::FETCH_CLASS, '\App\Models\\' . $className);
     }
 
     public function delete($table, $id)
