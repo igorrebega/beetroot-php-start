@@ -13,5 +13,5 @@ function view($name, $variables = [])
 {
     extract($variables);
 
-    require 'views/' . $name . '.view.php';
+    require 'app/views/' . $name . '.view.php';
 }
