@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use Core\App;
+
 class PagesController
 {
     public function index()

@@ -15,3 +15,8 @@ function view($name, $variables = [])
 
     require 'app/views/' . $name . '.view.php';
 }
+
+function redirect($location)
+{
+    header('Location: ' . $location);
+}

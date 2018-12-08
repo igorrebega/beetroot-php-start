@@ -21,6 +21,6 @@ class UsersController
             'name' => $_POST['name']
         ]);
 
-//        return redirect('users');
+        return redirect('users');
     }
 }
